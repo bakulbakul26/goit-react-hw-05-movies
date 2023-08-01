@@ -1,0 +1,11 @@
+.reviewsContainer {
+  margin-top: 20px;
+}
+
+.reviewItem {
+  margin-bottom: 10px;
+}
+
+.reviewAuthor {
+  font-weight: bold;
+}

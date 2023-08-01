@@ -1,0 +1,19 @@
+.castContainer {
+  margin-top: 20px;
+}
+
+.castItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.actorImage {
+  width: auto;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.actorName {
+  font-weight: bold;
+}

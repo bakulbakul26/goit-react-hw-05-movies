@@ -1,0 +1,49 @@
+.movieDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.movieTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.moviePoster {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.movieInfoContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.filmData {
+  margin-left: 20px;
+}
+.movieOverview {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.viewLinksContainer {
+  margin-top: 20px;
+}
+
+.viewLink {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.viewLink:last-child {
+  margin-right: 0;
+}
