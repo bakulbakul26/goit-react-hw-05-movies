@@ -9,7 +9,7 @@ const Reviews = ({ movieId }) => {
     const fetchReviewsData = async () => {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=de21efcc56a4ffd99e69f6f9f320b387`
+          `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=1f189cc65d8faa305307626e5a4d4071`
         );
         setReviewsData(response.data.results);
       } catch (error) {

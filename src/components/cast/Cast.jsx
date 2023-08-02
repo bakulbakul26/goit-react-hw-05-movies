@@ -11,7 +11,7 @@ const Cast = () => {
     const fetchCastData = async () => {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=e4c5f110c85160fe79ee52ae8869c5c9`
+          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=1f189cc65d8faa305307626e5a4d4071`
         );
         setCastData(response.data.cast);
       } catch (error) {

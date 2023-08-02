@@ -9,7 +9,7 @@ const Home = () => {
     const fetchTrendingMovies = async () => {
       try {
         const response = await axios.get(
-          'https://api.themoviedb.org/3/movie/550?api_key=e4c5f110c85160fe79ee52ae8869c5c9'
+          'https://api.themoviedb.org/3/trending/all/day?api_key=1f189cc65d8faa305307626e5a4d4071'
         );
         setTrendingMovies(response.data.results);
       } catch (error) {

@@ -9,8 +9,6 @@ const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedMovie] = useState(null);
 
-  // const history = useHistory();
-
   const handleSearchInputChange = event => {
     setSearchQuery(event.target.value);
   };
@@ -19,18 +17,13 @@ const Movies = () => {
     event.preventDefault();
     try {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=de21efcc56a4ffd99e69f6f9f320b387&query=${searchQuery}`
+        `https://api.themoviedb.org/3/search/movie?api_key=1f189cc65d8faa305307626e5a4d4071&query=${searchQuery}`
       );
       setSearchResults(response.data.results);
     } catch (error) {
       console.error('Error searching movies:', error);
     }
   };
-
-  // const handleMovieClick = movie => {
-  //   setSelectedMovie(movie);
-  //   history.push(`/movies/${movie.id}`);
-  // };
 
   return (
     <div className={styles.container}>
