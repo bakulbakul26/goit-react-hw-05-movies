@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/89.49869491.chunk.css","mappings":"AAAA,iCACE,eACF,CAEA,2BACE,kBACF,CAEA,6BACE,eACF","sources":["components/reviews/Reviews.module.css"],"sourcesContent":[".reviewsContainer {\n  margin-top: 20px;\n}\n\n.reviewItem {\n  margin-bottom: 10px;\n}\n\n.reviewAuthor {\n  font-weight: bold;\n}"],"names":[],"sourceRoot":""}
