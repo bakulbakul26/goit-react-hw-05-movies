@@ -57,7 +57,7 @@ const Movies = () => {
             className={styles.moviePoster}
           />
           <p>{selectedMovie.overview}</p>
-          {/* Wyświetlamy obsadę filmu na tej samej stronie */}
+
           <Cast movieId={selectedMovie.id} />
         </div>
       )}

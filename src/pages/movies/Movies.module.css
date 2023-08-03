@@ -62,13 +62,11 @@
   font-size: 16px;
 }
 
-/* Style dla linków */
 .link {
   text-decoration: none;
   color: #007bff;
 }
 
-/* Styl dla aktywnego linku */
 .link.active-link {
   color: #ff5722;
 }

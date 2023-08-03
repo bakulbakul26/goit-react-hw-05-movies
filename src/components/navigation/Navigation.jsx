@@ -11,7 +11,7 @@ const Navigation = () => {
             exact
             to="/"
             className={css.navLink}
-            activeClassName={css['active-link']}
+            activeclassname={css['active-link']}
           >
             Home
           </NavLink>
@@ -20,7 +20,7 @@ const Navigation = () => {
           <NavLink
             to="/movies"
             className={css.navLink}
-            activeClassName={css['active-link']}
+            activeclassname={css['active-link']}
           >
             Movies
           </NavLink>

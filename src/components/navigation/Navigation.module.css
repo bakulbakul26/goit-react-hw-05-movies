@@ -3,19 +3,16 @@
   padding: 10px;
 }
 
-/* Style dla listy nawigacji */
 .navList {
   list-style: none;
   display: flex;
   justify-content: center;
 }
 
-/* Style dla elementów listy */
 .navItem {
   margin: 0 10px;
 }
 
-/* Style dla linków nawigacji */
 .navLink {
   text-decoration: none;
   color: white;
@@ -23,7 +20,6 @@
   border-radius: 4px;
 }
 
-/* Styl dla aktywnego linku */
 .active-link {
   background-color: #ff5722;
 }

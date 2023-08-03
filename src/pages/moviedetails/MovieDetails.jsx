@@ -58,7 +58,6 @@ const MovieDetails = () => {
       </div>
 
       <div className={css.viewLinksContainer}>
-        {/* Toggle the state to show/hide the cast and reviews */}
         <button onClick={handleCastClick} className={css.viewLink}>
           Cast
         </button>
@@ -67,10 +66,8 @@ const MovieDetails = () => {
         </button>
       </div>
 
-      {/* Render the Cast component only if showCast state is true */}
       {showCast && <Cast movieId={movieId} />}
 
-      {/* Render the Reviews component only if showReviews state is true */}
       {showReviews && <Reviews movieId={movieId} />}
     </div>
   );
