@@ -1,0 +1,30 @@
+.container-home {
+  padding: 20px;
+}
+
+.home-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.home-movie-list {
+  list-style: none;
+  padding: 0;
+}
+
+.home-movie-item {
+  margin-bottom: 10px;
+}
+
+.dark-mode .container-home {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .home-title {
+  color: #fff;
+}
+
+.dark-mode .home-movie-item a {
+  color: #fff;
+}

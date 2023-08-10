@@ -1,0 +1,83 @@
+.movie-container {
+  padding: 20px;
+}
+
+.movie-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.movie-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.movie-overview {
+  margin-bottom: 20px;
+}
+
+.trailer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.trailer-item {
+  margin-bottom: 5px;
+}
+
+.trailer-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Dark mode styles */
+
+.dark-mode .movie-container {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .movie-title {
+  color: #fff;
+}
+
+.dark-mode .movie-image {
+  border: 1px solid #fff;
+}
+
+.dark-mode .movie-overview {
+  color: #fff;
+}
+
+.dark-mode .trailer-link {
+  color: #4db2ec;
+}
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.btn:focus,
+.btn:hover {
+  box-shadow: 0 0 5px #007bff;
+}
+
+/* Style dla przycisków w trybie ciemnym */
+.dark-mode .btn {
+  background-color: #b65a04;
+  color: white;
+}
+.dark-mode .btn:focus,
+.dark-mode .btn:hover {
+  box-shadow: 0 0 5px #b65a04;
+}

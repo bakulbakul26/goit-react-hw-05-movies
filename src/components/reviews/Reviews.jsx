@@ -1,39 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import css from './Reviews.module.css';
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import './Reviews.css';
+import { useDarkMode } from '../Utils/DarkMode';
 
-const Reviews = ({ movieId }) => {
-  const [reviewsData, setReviewsData] = useState([]);
+const Reviews = () => {
+  const { movieId } = useParams();
+  const [reviews, setReviews] = useState([]);
+  const { darkMode } = useDarkMode();
 
   useEffect(() => {
-    const fetchReviewsData = async () => {
+    const fetchMovieReviews = async () => {
       try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=1f189cc65d8faa305307626e5a4d4071`
+        const apiKey = '1f189cc65d8faa305307626e5a4d4071';
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${apiKey}`
         );
-        setReviewsData(response.data.results);
+        const data = await response.json();
+        setReviews(data.results);
       } catch (error) {
-        console.error('Error fetching reviews data:', error);
+        console.error('Error while fetching data:', error);
       }
     };
 
-    fetchReviewsData();
+    fetchMovieReviews();
   }, [movieId]);
 
   return (
-    <div className={css.reviewsContainer}>
-      {reviewsData.length === 0 ? (
-        <p>We don't have any reviews for this movie</p>
-      ) : (
-        <ul>
-          {reviewsData.map(review => (
-            <li key={review.id} className={css.reviewItem}>
-              <p className={css.reviewAuthor}>Author: {review.author}</p>
-              <p>{review.content}</p>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className={`reviews-container ${darkMode ? 'dark-mode' : ''}`}>
+      <h2>Reviews</h2>
+      <ul className="reviews-list">
+        {reviews.map(review => (
+          <li key={review.id}>
+            <p>{review.author}</p>
+            <p>{review.content}</p>
+          </li>
+        ))}
+      </ul>
+      <Link to={`/movies/${movieId}`} className="btn">
+        Back to Movie Details
+      </Link>
     </div>
   );
 };

@@ -1,41 +1,50 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import css from './Cast.module.css';
+import { useParams, Link } from 'react-router-dom';
+import '../Cast/Cast.css';
+import { useDarkMode } from '../Utils/DarkMode';
+
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 
 const Cast = () => {
   const { movieId } = useParams();
-  const [castData, setCastData] = useState([]);
+  const [cast, setCast] = useState([]);
+  const { darkMode } = useDarkMode();
 
   useEffect(() => {
-    const fetchCastData = async () => {
+    const fetchMovieCast = async () => {
       try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=1f189cc65d8faa305307626e5a4d4071`
+        const apiKey = '1f189cc65d8faa305307626e5a4d4071';
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
         );
-        setCastData(response.data.cast);
+        const data = await response.json();
+        setCast(data.cast);
       } catch (error) {
-        console.error('Error fetching cast data:', error);
+        console.error('Error while fetching data:', error);
       }
     };
 
-    fetchCastData();
+    fetchMovieCast();
   }, [movieId]);
 
   return (
-    <div className={css.castContainer}>
-      <ul>
-        {castData.map(actor => (
-          <li key={actor.id} className={css.castItem}>
+    <div className={`cast-container ${darkMode ? 'dark-mode' : ''}`}>
+      <h2>Cast</h2>
+      <ul className="cast-list">
+        {cast.map(actor => (
+          <li className="cast-item" key={actor.id}>
             <img
-              src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+              className="actor-image"
+              src={`${IMAGE_BASE_URL}${actor.profile_path}`}
               alt={actor.name}
-              className={css.actorImage}
             />
-            <p className={css.actorName}>{actor.name}</p>
+            <p className="actor-name">{actor.name}</p>
           </li>
         ))}
       </ul>
+      <Link to={`/movies/${movieId}`} className="btn">
+        Back to Movie Details
+      </Link>
     </div>
   );
 };

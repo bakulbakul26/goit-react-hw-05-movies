@@ -1,0 +1,61 @@
+.reviews-container {
+  padding: 20px;
+}
+
+.reviews-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.reviews-list {
+  list-style: none;
+  padding: 0;
+}
+
+.reviews-list li {
+  margin-bottom: 20px;
+}
+
+.reviews-list p {
+  margin: 0;
+}
+
+.reviews-list .author {
+  font-weight: bold;
+}
+
+/* Style dla dark mode */
+.dark-mode .reviews-container {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .reviews-list .author {
+  color: #4db2ec;
+}
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.btn:focus,
+.btn:hover {
+  box-shadow: 0 0 5px #007bff;
+}
+
+/* Style dla przycisków w trybie ciemnym */
+.dark-mode .btn {
+  background-color: #b65a04;
+  color: white;
+}
+.dark-mode .btn:focus,
+.dark-mode .btn:hover {
+  box-shadow: 0 0 5px #b65a04;
+}
