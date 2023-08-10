@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import '../Cast/Cast.css';
 import { useDarkMode } from '../Utils/DarkMode';
 
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
+const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200'; // Base URL for actor images
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -13,7 +13,7 @@ const Cast = () => {
   useEffect(() => {
     const fetchMovieCast = async () => {
       try {
-        const apiKey = '1f189cc65d8faa305307626e5a4d4071';
+        const apiKey = '1f189cc65d8faa305307626e5a4d4071'; // Klucz API themoviedb.org
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
         );
